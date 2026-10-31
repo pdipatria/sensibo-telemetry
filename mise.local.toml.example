@@ -1,0 +1,17 @@
+# Copy to mise.local.toml and fill in your local values.
+# mise.local.toml overrides mise.toml and must never be committed.
+[env]
+SENSIBO_DEVICE_IDS = "device-one,device-two"
+# Legacy fallback when SENSIBO_DEVICE_IDS is blank:
+# SENSIBO_DEVICE_ID = "device-one"
+SENSIBO_DB_PASSWORD = ""
+SENSIBO_API_KEY = ""
+
+# Uncomment if your database differs from the project defaults:
+# SENSIBO_DB_URL = "jdbc:postgresql://localhost:5432/sensibo"
+# SENSIBO_DB_USERNAME = "sensibo"
+# SENSIBO_HISTORY_DAYS = "1"
+# SENSIBO_POLL_INTERVAL = "PT5M"
+# SENSIBO_POLL_INITIAL_DELAY = "PT10S"
+# SENSIBO_CONTROL_ADDRESS = "127.0.0.1"
+# SENSIBO_CONTROL_PORT = "8080"

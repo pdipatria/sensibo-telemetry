@@ -1,0 +1,29 @@
+# mise sets both PATH and JAVA_HOME for this project.
+[tools]
+java = "temurin-21"
+
+[env]
+SENSIBO_DB_URL = "jdbc:postgresql://localhost:5432/sensibo"
+SENSIBO_DB_USERNAME = "sensibo"
+SENSIBO_HISTORY_DAYS = "1"
+# Put credentials and device IDs in the gitignored mise.local.toml.
+
+[tasks.test]
+description = "Run tests (requires Docker)"
+run = "./mvnw test"
+
+[tasks.build]
+description = "Build the executable JAR and run tests (requires Docker)"
+run = "./mvnw clean package"
+
+[tasks.run]
+description = "Start the application without importing"
+run = "./mvnw spring-boot:run"
+
+[tasks.import]
+description = "Fetch and persist Sensibo history once, then exit"
+run = "./mvnw spring-boot:run -Dspring-boot.run.profiles=import"
+
+[tasks.poll]
+description = "Continuously poll Sensibo history (stop with Ctrl+C)"
+run = "./mvnw spring-boot:run -Dspring-boot.run.profiles=poll"
