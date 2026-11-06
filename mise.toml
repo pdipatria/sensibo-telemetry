@@ -6,6 +6,9 @@ java = "temurin-21"
 SENSIBO_DB_URL = "jdbc:postgresql://localhost:5432/sensibo"
 SENSIBO_DB_USERNAME = "sensibo"
 SENSIBO_HISTORY_DAYS = "1"
+SENSIBO_POLL_INITIAL_DELAY = "PT5S"
+SENSIBO_POLL_INTERVAL = "PT3M"
+SENSIBO_CONTROL_PORT = "8080"
 # Put credentials and device IDs in the gitignored mise.local.toml.
 
 [tasks.test]
